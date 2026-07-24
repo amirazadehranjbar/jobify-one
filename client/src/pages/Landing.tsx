@@ -1,7 +1,21 @@
+import styled from "styled-components";
+
+const StyledBtn = styled.button`
+    font-size: medium;
+    background-color: #1e293b;
+    color: azure;
+    border: #194ca4;
+    border-radius: 12px;
+    padding: 10px;
+`;
 
 function Landing() {
     return (
-        <div>Landing</div>
+        <div>
+            <h1>landing page</h1>
+
+            <StyledBtn>button</StyledBtn>
+        </div>
     )
 }
 
