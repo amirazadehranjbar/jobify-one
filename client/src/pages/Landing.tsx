@@ -1,20 +1,31 @@
-import styled from "styled-components";
-
-const StyledBtn = styled.button`
-    font-size: medium;
-    background-color: #1e293b;
-    color: azure;
-    border:2px solid #194ca4;
-    border-radius: 8px;
-    padding: 10px;
-`;
+import React from "react"
+import {Button} from "@/components/ui/button";
+// @ts-ignore
+import main from "@/assets/images/main.svg"
 
 function Landing() {
-    return (
-        <div>
-            <h1>landing page</h1>
 
-            <StyledBtn>button</StyledBtn>
+    return (
+        <div className="flex flex-col overflow-x-hidden bg-page-bg">
+            <h1 className="text-3xl text-center mt-5">Job <span
+                className="text-cool-steel-500 font-bold">Tracking</span> App</h1>
+
+            <p className="mt-5 p-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+            </p>
+
+            <div className="flex items-center justify-around p-4">
+                <Button className="bg-button-bg text-text-one cursor-pointer">register</Button>
+                <Button className="bg-button-bg text-text-one cursor-pointer">login</Button>
+            </div>
+
+            <div className="flex items-center justify-center">
+                <img src={main} alt="main" className="mt-5 p-4 h-120 w-fit"/>
+            </div>
         </div>
     )
 }
