@@ -351,3 +351,7 @@
     @apply font-sans;
   }
 }
+
+.myBtn{
+  @apply flex bg-button-bg hover:bg-button-bg-hover cursor-pointer rounded-md border-2 border-button-border p-2 text-button-text font-mono justify-center items-center
+}

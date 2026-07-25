@@ -1,5 +1,4 @@
 import React from "react"
-import {Button} from "@/components/ui/button";
 // @ts-ignore
 import main from "@/assets/images/main.svg"
 
@@ -19,8 +18,8 @@ function Landing() {
             </p>
 
             <div className="flex items-center justify-around p-4">
-                <Button className="bg-button-bg text-text-one cursor-pointer">register</Button>
-                <Button className="bg-button-bg text-text-one cursor-pointer">login</Button>
+                <button className="myBtn w-1/4">register</button>
+                <button className="myBtn w-1/4">login</button>
             </div>
 
             <div className="flex items-center justify-center">
