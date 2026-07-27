@@ -1,0 +1,368 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+
+/* lets dark: utilities respond to a .dark class on <html>, not just OS setting */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-light-cyan-50: oklch(97.67% 0.021 200.45);
+  --color-light-cyan-100: oklch(95.43% 0.041 198.35);
+  --color-light-cyan-200: oklch(91.32% 0.079 198.82);
+  --color-light-cyan-300: oklch(87.82% 0.109 198.26);
+  --color-light-cyan-400: oklch(84.95% 0.130 198.70);
+  --color-light-cyan-500: oklch(82.72% 0.138 198.89);
+  --color-light-cyan-600: oklch(70.04% 0.117 199.13);
+  --color-light-cyan-700: oklch(56.72% 0.094 198.60);
+  --color-light-cyan-800: oklch(42.59% 0.070 198.95);
+  --color-light-cyan-900: oklch(27.13% 0.042 197.45);
+  --color-light-cyan-950: oklch(22.21% 0.035 194.95);
+
+  --color-light-blue-50: oklch(0.895 0.061 203.838);
+  --color-light-blue-100: oklch(93.41% 0.018 205.32);
+  --color-light-blue-200: oklch(86.60% 0.036 207.67);
+  --color-light-blue-300: oklch(80.01% 0.053 206.86);
+  --color-light-blue-400: oklch(73.48% 0.069 206.59);
+  --color-light-blue-500: oklch(67.08% 0.083 206.74);
+  --color-light-blue-600: oklch(56.99% 0.069 206.99);
+  --color-light-blue-700: oklch(46.44% 0.055 207.39);
+  --color-light-blue-800: oklch(35.24% 0.040 208.21);
+  --color-light-blue-900: oklch(23.38% 0.023 205.30);
+  --color-light-blue-950: oklch(19.38% 0.017 202.52);
+
+  --color-cool-steel-50: oklch(96.17% 0.005 228.82);
+  --color-cool-steel-100: oklch(92.38% 0.009 232.37);
+  --color-cool-steel-200: oklch(84.63% 0.019 232.56);
+  --color-cool-steel-300: oklch(76.94% 0.029 229.30);
+  --color-cool-steel-400: oklch(68.89% 0.039 230.53);
+  --color-cool-steel-500: oklch(60.66% 0.051 232.31);
+  --color-cool-steel-600: oklch(51.78% 0.041 231.04);
+  --color-cool-steel-700: oklch(42.49% 0.033 230.09);
+  --color-cool-steel-800: oklch(32.38% 0.023 233.48);
+  --color-cool-steel-900: oklch(21.69% 0.013 233.22);
+  --color-cool-steel-950: oklch(18.28% 0.010 234.42);
+
+  --color-blue-slate-50: oklch(96.29% 0.003 228.78);
+  --color-blue-slate-100: oklch(92.32% 0.004 236.50);
+  --color-blue-slate-200: oklch(84.64% 0.010 228.91);
+  --color-blue-slate-300: oklch(76.63% 0.015 231.28);
+  --color-blue-slate-400: oklch(68.42% 0.020 232.66);
+  --color-blue-slate-500: oklch(60.16% 0.027 230.75);
+  --color-blue-slate-600: oklch(51.19% 0.021 232.87);
+  --color-blue-slate-700: oklch(42.01% 0.017 231.63);
+  --color-blue-slate-800: oklch(32.30% 0.013 229.35);
+  --color-blue-slate-900: oklch(21.54% 0.006 236.85);
+  --color-blue-slate-950: oklch(18.09% 0.005 248.12);
+
+  --color-jet-black-50: oklch(96.24% 0.004 236.50);
+  --color-jet-black-100: oklch(92.58% 0.010 222.06);
+  --color-jet-black-200: oklch(84.87% 0.017 225.23);
+  --color-jet-black-300: oklch(77.19% 0.027 224.34);
+  --color-jet-black-400: oklch(69.40% 0.036 222.87);
+  --color-jet-black-500: oklch(61.42% 0.046 223.28);
+  --color-jet-black-600: oklch(52.32% 0.038 223.27);
+  --color-jet-black-700: oklch(42.77% 0.031 225.02);
+  --color-jet-black-800: oklch(32.68% 0.021 225.98);
+  --color-jet-black-900: oklch(0.225 0.018 214.994);
+  --color-jet-black-950: oklch(0.251 0.038 203.543);
+}
+
+/* ===== semantic named tokens (light = default) ===== */
+:root {
+  --page-bg: var(--color-light-cyan-50);
+  --surface-bg: var(--color-light-blue-50);
+
+  --button-bg: var(--color-light-blue-500);
+  --button-bg-hover: var(--color-light-blue-600);
+  --button-border: var(--color-light-blue-600);
+  --button-text: var(--color-light-cyan-50);
+
+  --input-bg: var(--color-light-cyan-50);
+  --input-border: var(--color-cool-steel-300);
+  --input-border-focus: var(--color-light-blue-500);
+  --input-placeholder: var(--color-blue-slate-400);
+
+  --text-one: var(--color-jet-black-900);
+  --text-two: var(--color-blue-slate-600);
+
+  --border-color: var(--color-cool-steel-200);
+
+  --card: oklch(1 0 0);
+
+  --card-foreground: oklch(0.145 0 0);
+
+  --popover: oklch(1 0 0);
+
+  --popover-foreground: oklch(0.145 0 0);
+
+  --primary: oklch(0.205 0 0);
+
+  --primary-foreground: oklch(0.985 0 0);
+
+  --secondary: oklch(0.97 0 0);
+
+  --secondary-foreground: oklch(0.205 0 0);
+
+  --muted: oklch(0.97 0 0);
+
+  --muted-foreground: oklch(0.556 0 0);
+
+  --accent: oklch(0.97 0 0);
+
+  --accent-foreground: oklch(0.205 0 0);
+
+  --destructive: oklch(0.577 0.245 27.325);
+
+  --border: oklch(0.922 0 0);
+
+  --input: oklch(0.922 0 0);
+
+  --ring: oklch(0.708 0 0);
+
+  --chart-1: oklch(0.87 0 0);
+
+  --chart-2: oklch(0.556 0 0);
+
+  --chart-3: oklch(0.439 0 0);
+
+  --chart-4: oklch(0.371 0 0);
+
+  --chart-5: oklch(0.269 0 0);
+
+  --radius: 0.625rem;
+
+  --sidebar: oklch(0.985 0 0);
+
+  --sidebar-foreground: oklch(0.145 0 0);
+
+  --sidebar-primary: oklch(0.205 0 0);
+
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+
+  --sidebar-accent: oklch(0.97 0 0);
+
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+
+  --sidebar-border: oklch(0.922 0 0);
+
+  --sidebar-ring: oklch(0.708 0 0);
+
+  --background: oklch(1 0 0);
+
+  --foreground: oklch(0.145 0 0);
+}
+
+/* ===== system preference (only when no manual .dark/.light class set) ===== */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not(.dark) {
+    --page-bg: var(--color-jet-black-950);
+    --surface-bg: var(--color-jet-black-900);
+
+    --button-bg: var(--color-light-blue-400);
+    --button-bg-hover: var(--color-light-blue-500);
+    --button-border: var(--color-light-blue-300);
+    --button-text: var(--color-jet-black-950);
+
+    --input-bg: var(--color-jet-black-800);
+    --input-border: var(--color-cool-steel-600);
+    --input-border-focus: var(--color-light-blue-400);
+    --input-placeholder: var(--color-blue-slate-500);
+
+    --text-one: var(--color-light-cyan-50);
+    --text-two: var(--color-blue-slate-300);
+
+    --border-color: var(--color-cool-steel-700);
+  }
+}
+
+/* ===== manual override — add/remove .dark or .light on <html> via JS ===== */
+.dark {
+  --page-bg: var(--color-jet-black-950);
+  --surface-bg: var(--color-jet-black-900);
+
+  --button-bg: var(--color-light-blue-400);
+  --button-bg-hover: var(--color-light-blue-500);
+  --button-border: var(--color-light-blue-300);
+  --button-text: var(--color-jet-black-950);
+
+  --input-bg: var(--color-jet-black-800);
+  --input-border: var(--color-cool-steel-600);
+  --input-border-focus: var(--color-light-blue-400);
+  --input-placeholder: var(--color-blue-slate-500);
+
+  --text-one: var(--color-light-cyan-50);
+  --text-two: var(--color-blue-slate-300);
+
+  --border-color: var(--color-cool-steel-700);
+
+  --background: oklch(0.145 0 0);
+
+  --foreground: oklch(0.985 0 0);
+
+  --card: oklch(0.205 0 0);
+
+  --card-foreground: oklch(0.985 0 0);
+
+  --popover: oklch(0.205 0 0);
+
+  --popover-foreground: oklch(0.985 0 0);
+
+  --primary: oklch(0.922 0 0);
+
+  --primary-foreground: oklch(0.205 0 0);
+
+  --secondary: oklch(0.269 0 0);
+
+  --secondary-foreground: oklch(0.985 0 0);
+
+  --muted: oklch(0.269 0 0);
+
+  --muted-foreground: oklch(0.708 0 0);
+
+  --accent: oklch(0.269 0 0);
+
+  --accent-foreground: oklch(0.985 0 0);
+
+  --destructive: oklch(0.704 0.191 22.216);
+
+  --border: oklch(1 0 0 / 10%);
+
+  --input: oklch(1 0 0 / 15%);
+
+  --ring: oklch(0.556 0 0);
+
+  --chart-1: oklch(0.87 0 0);
+
+  --chart-2: oklch(0.556 0 0);
+
+  --chart-3: oklch(0.439 0 0);
+
+  --chart-4: oklch(0.371 0 0);
+
+  --chart-5: oklch(0.269 0 0);
+
+  --sidebar: oklch(0.205 0 0);
+
+  --sidebar-foreground: oklch(0.985 0 0);
+
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+
+  --sidebar-accent: oklch(0.269 0 0);
+
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+
+  --sidebar-border: oklch(1 0 0 / 10%);
+
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+.light {
+  --page-bg: var(--color-light-cyan-50);
+  --surface-bg: var(--color-light-blue-50);
+
+  --button-bg: var(--color-light-blue-500);
+  --button-bg-hover: var(--color-light-blue-600);
+  --button-border: var(--color-light-blue-600);
+  --button-text: var(--color-light-cyan-50);
+
+  --input-bg: var(--color-light-cyan-50);
+  --input-border: var(--color-cool-steel-300);
+  --input-border-focus: var(--color-light-blue-500);
+  --input-placeholder: var(--color-blue-slate-400);
+
+  --text-one: var(--color-jet-black-900);
+  --text-two: var(--color-blue-slate-600);
+
+  --border-color: var(--color-cool-steel-200);
+}
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+
+  /* your custom semantic palette — mapping these here is what makes
+     bg-surface-bg / text-text-one / border-border-color etc. exist as
+     real Tailwind utility classes. Without this, they're just CSS vars
+     that Tailwind never turns into class names. */
+  --color-page-bg: var(--page-bg);
+  --color-surface-bg: var(--surface-bg);
+  --color-button-bg: var(--button-bg);
+  --color-button-bg-hover: var(--button-bg-hover);
+  --color-button-border: var(--button-border);
+  --color-button-text: var(--button-text);
+  --color-input-bg: var(--input-bg);
+  --color-input-border: var(--input-border);
+  --color-input-border-focus: var(--input-border-focus);
+  --color-input-placeholder: var(--input-placeholder);
+  --color-text-one: var(--text-one);
+  --color-text-two: var(--text-two);
+  --color-border-color: var(--border-color);
+  /*--radius-sm: calc(var(--radius) * 0.6);*/
+  /*--radius-md: calc(var(--radius) * 0.8);*/
+  /*--radius-lg: var(--radius);*/
+  /*--radius-xl: calc(var(--radius) * 1.4);*/
+  /*--radius-2xl: calc(var(--radius) * 1.8);*/
+  /*--radius-3xl: calc(var(--radius) * 2.2);*/
+  /*--radius-4xl: calc(var(--radius) * 2.6);*/
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+.myBtn{
+  @apply flex bg-button-bg hover:bg-button-bg-hover cursor-pointer rounded-md border-2 border-button-border p-2 text-button-text font-mono justify-center items-center
+}

@@ -11,7 +11,7 @@ function Error() {
         <div className="w-screen h-screen bg-background flex flex-col items-center p-3 justify-between content-between">
             <div className="flex flex-col items-center">
                 <h1 className="text-foreground text-3xl">Not Found</h1>
-                <img src={img} alt="not found" className="mt-12"/>
+                <img src={img} alt="not found" className="mt-12 size-3/4"/>
             </div>
             <Link to="/dashboard" className="myBtn">
                 back to dashboard

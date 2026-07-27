@@ -1,11 +1,12 @@
 import React from "react"
 // @ts-ignore
 import main from "@/assets/images/main.svg"
+import {Link} from "react-router-dom";
 
 function Landing() {
 
     return (
-        <div className="flex flex-col overflow-x-hidden bg-page-bg">
+        <div className="flex flex-col w-full h-full bg-page-bg overflow-y-hidden">
             <h1 className="text-3xl text-center mt-5">Job <span
                 className="text-cool-steel-500 font-bold">Tracking</span> App</h1>
 
@@ -18,12 +19,12 @@ function Landing() {
             </p>
 
             <div className="flex items-center justify-around p-4">
-                <button className="myBtn w-1/4">register</button>
-                <button className="myBtn w-1/4">login</button>
+                <Link to="/register" className="myBtn w-1/4">register</Link>
+                <Link to="/login" className="myBtn w-1/4">login</Link>
             </div>
 
-            <div className="flex items-center justify-center">
-                <img src={main} alt="main" className="mt-5 p-4 h-120 w-fit"/>
+            <div className="flex items-center justify-center overflow-y-hidden">
+                <img src={main} alt="main" className="mt-5 size-80"/>
             </div>
         </div>
     )

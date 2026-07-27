@@ -6,13 +6,15 @@ import logo from "@/assets/images/logo.svg"
 
 function HomeLayout() {
     return (
-        <div className="h-screen w-screen">
-            <div className="flex items-center justify-between bg-surface-bg p-4">
+        <div className="h-full w-full flex flex-col ">
+            <div className="flex items-center justify-between bg-surface-bg p-4 shrink-0">
                 <img src={logo} alt="logo"/>
                 <ModeToggle/>
             </div>
 
-            <Outlet/>
+            <div className="flex-1 min-h-0">
+                <Outlet/>
+            </div>
         </div>
     )
 }
