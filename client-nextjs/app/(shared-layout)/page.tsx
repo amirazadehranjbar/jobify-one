@@ -17,8 +17,8 @@ export default function Home() {
             </p>
 
             <div className="flex items-center justify-around p-4">
-                <Link href="/" className="myBtn w-1/4">register</Link>
-                <Link href="/" className="myBtn w-1/4">login</Link>
+                <Link href="register" className="myBtn w-1/4">register</Link>
+                <Link href="login" className="myBtn w-1/4">login</Link>
             </div>
 
             <div className="flex items-center justify-center overflow-y-hidden">
