@@ -3054,6 +3054,18 @@
         <option name="homepage" value="https://hexui.sh" />
         <option name="urlTemplate" value="https://hexui.sh/r/{name}.json" />
       </RegistryConfigState>
+      <RegistryConfigState>
+        <option name="id" value="central-diklein" />
+        <option name="name" value="Diklein" />
+        <option name="namespace" value="@diklein" />
+        <option name="baseUrl" value="https://diklein.com/r" />
+        <option name="stylePath" value="/{name}.json" />
+        <option name="type" value="community" />
+        <option name="enabled" value="false" />
+        <option name="description" value="A growing collection of design-forward React components by Dave Klein, extracted from the components powering diklein.com." />
+        <option name="homepage" value="https://diklein.com" />
+        <option name="urlTemplate" value="https://diklein.com/r/{name}.json" />
+      </RegistryConfigState>
     </registryConfigs>
   </component>
 </project>
