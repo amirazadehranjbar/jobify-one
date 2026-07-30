@@ -3054,6 +3054,42 @@
         <option name="homepage" value="https://hexui.sh" />
         <option name="urlTemplate" value="https://hexui.sh/r/{name}.json" />
       </RegistryConfigState>
+      <RegistryConfigState>
+        <option name="id" value="central-diklein" />
+        <option name="name" value="Diklein" />
+        <option name="namespace" value="@diklein" />
+        <option name="baseUrl" value="https://diklein.com/r" />
+        <option name="stylePath" value="/{name}.json" />
+        <option name="type" value="community" />
+        <option name="enabled" value="false" />
+        <option name="description" value="A growing collection of design-forward React components by Dave Klein, extracted from the components powering diklein.com." />
+        <option name="homepage" value="https://diklein.com" />
+        <option name="urlTemplate" value="https://diklein.com/r/{name}.json" />
+      </RegistryConfigState>
+      <RegistryConfigState>
+        <option name="id" value="central-neon-ui" />
+        <option name="name" value="Neon-ui" />
+        <option name="namespace" value="@neon-ui" />
+        <option name="baseUrl" value="https://ui.neon.com/r" />
+        <option name="stylePath" value="/{name}.json" />
+        <option name="type" value="community" />
+        <option name="enabled" value="false" />
+        <option name="description" value="Production-ready components for agent platforms built on Neon. Database branching, connection strings, usage metering and project management UI, built with Base UI and Tailwind v4." />
+        <option name="homepage" value="https://ui.neon.com" />
+        <option name="urlTemplate" value="https://ui.neon.com/r/{name}.json" />
+      </RegistryConfigState>
+      <RegistryConfigState>
+        <option name="id" value="central-wa-ui" />
+        <option name="name" value="Wa-ui" />
+        <option name="namespace" value="@wa-ui" />
+        <option name="baseUrl" value="https://ui.meta-cloud-api.site/r" />
+        <option name="stylePath" value="/{name}.json" />
+        <option name="type" value="community" />
+        <option name="enabled" value="false" />
+        <option name="description" value="Production-ready WhatsApp Web UI components built on WDS design tokens with Tailwind CSS v4 and @base-ui/react." />
+        <option name="homepage" value="https://ui.meta-cloud-api.site" />
+        <option name="urlTemplate" value="https://ui.meta-cloud-api.site/r/{name}.json" />
+      </RegistryConfigState>
     </registryConfigs>
   </component>
 </project>
