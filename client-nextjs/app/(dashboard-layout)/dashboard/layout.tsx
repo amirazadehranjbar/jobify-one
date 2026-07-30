@@ -12,8 +12,8 @@ export default function DashboardLayout({
     return <div className="h-full flex flex-col items-center justify-between">
 
         <div className=" flex items-center justify-between w-full h-20 bg-surface-bg/50 shadow-2xl p-4">
-            <Image src={logo} alt="logo"/>
-            <Link href="/">
+
+            <Link href="/public">
                 <ArrowLeft className="text-text-two cursor-pointer"/>
             </Link>
 
