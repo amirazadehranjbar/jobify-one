@@ -61,7 +61,7 @@ export default function DashboardLayout({
             <div className="flex justify-between w-full h-1/10 bg-surface-bg/50 p-4">
                 <CgMenuLeft className="size-10 cursor-pointer" onClick={handleSetOpen}/>
 
-                <p className="text-text-two text-xl font-bold">dashboard</p>
+                <p className="text-button-text text-2xl font-semibold">dashboard</p>
 
                 <div className="flex items-center space-x-4">
                     <ThemeToggle/>
