@@ -14,7 +14,7 @@ export function MyButtonMenuWithIcon() {
     return (
         <Menu as="div" className="relative inline-block text-left">
             <div>
-                <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-button-bg px-3 py-2 text-sm text-button-text ring-1 shadow-xs border-button-border hover:bg-button-bg-hover hover:transition-all duration-300 hover:text-button-text-hover hover:border-e-button-bg-hover cursor-pointer">
+                <MenuButton className="myMenuButton">
                     amir
                     <ChevronDownIcon aria-hidden="true" className="-mr-1 size-5 text-button-text" />
                 </MenuButton>
