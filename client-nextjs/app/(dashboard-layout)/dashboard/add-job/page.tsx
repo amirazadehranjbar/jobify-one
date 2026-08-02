@@ -86,7 +86,7 @@ export default function AddJobPage() {
     }
 
     return (
-        <Card className="w-1/2">
+        <Card className="w-1/2 max-md:w-3/4">
             <CardHeader>
                 <CardTitle className="text-text-two text-xl font-bold">add job</CardTitle>
                 <CardDescription>
@@ -95,7 +95,7 @@ export default function AddJobPage() {
             </CardHeader>
             <CardContent>
                 <form id="form-rhf-demo" onSubmit={form.handleSubmit(onSubmit)}>
-                    <FieldGroup className="grid grid-cols-2">
+                    <FieldGroup className="grid grid-cols-2 max-md:grid-cols-1">
 
                         {/*region position*/}
                         <Controller

@@ -19,38 +19,46 @@ export default function DashboardLayout({
 }) {
 
     const [isOpen, setOpen] = useState(false);
-
     const handleSetOpen = () => {
         setOpen(!isOpen)
+    }
+
+    const [isOpenMiddleMenu , setIsOpenMiddleMenu] = useState(false)
+
+    const handleSetIsOpenMiddleMenu = () => {
+      setIsOpenMiddleMenu(!isOpenMiddleMenu);
     }
 
     return <div className="h-full w-full flex">
 
         {/*region sidebar*/}
-        <div className={`w-1/6 h-full bg-surface-bg/50 ${isOpen ? "hidden" : ""}`}>
+        <div className={`bg-surface-bg/50
+         max-md:hidden p-4 ${isOpen ? "block" : "hidden"}
+                        `}>
             <div className="flex flex-col items-start">
                 <Image src={logo} alt="logo" className="mt-3 mb-3"/>
 
                 <div
-                    className="flex items-center justify-center space-x-5 p-3 hover:translate-x-4 transition-all duration-300">
-                    <MdOutlineDomainAdd className="size-6 text-button-bg"/>
-                    <Link href="/dashboard/add-job" className="text-text-two">add job</Link>
+                    className="flex items-center justify-center space-x-5 p-3 hover:translate-x-4 transition-all duration-500">
+                    <MdOutlineDomainAdd className="size-6 text-button-bg  transition-all duration-500"/>
+                    <Link href="/dashboard/add-job" className="text-text-two transition-all duration-500">add job</Link>
                 </div>
 
                 <div
-                    className="flex items-center justify-center space-x-5 p-3 hover:translate-x-4 transition-all duration-300">
-                    <FaSearchengin className="size-6 text-button-bg"/>
-                    <Link href="/dashboard/all-jobs" className="text-text-two">all job</Link>
+                    className="flex items-center justify-center space-x-5 p-3 hover:translate-x-4 transition-all duration-500">
+                    <FaSearchengin className="size-6 text-button-bg transition-all duration-500"/>
+                    <Link href="/dashboard/all-jobs" className="text-text-two transition-all duration-500">all
+                        job</Link>
                 </div>
 
                 <div
-                    className="flex items-center justify-center space-x-5 p-3 hover:translate-x-4 transition-all duration-300">
-                    <ImStatsDots className="size-6 text-button-bg"/>
-                    <Link href="/dashboard/stats" className="text-text-two">stats</Link>
+                    className="flex items-center justify-center space-x-5 p-3 hover:translate-x-4 transition-all duration-500">
+                    <ImStatsDots className="size-6 text-button-bg transition-all duration-500"/>
+                    <Link href="/dashboard/stats" className="text-text-two transition-all duration-500">stats</Link>
                 </div>
 
                 <div
-                    className="flex items-center justify-center space-x-5 p-3 hover:translate-x-4 transition-all duration-300">
+                    className="flex items-center justify-center space-x-5 p-3 hover:translate-x-4 transition-all duration-500">
                     <ImProfile className="size-6 text-button-bg"/>
                     <Link href="/dashboard/profile" className="text-text-two">profile</Link>
                 </div>
@@ -58,6 +66,7 @@ export default function DashboardLayout({
             </div>
         </div>
         {/*endregion*/}
+
 
         {/*region header and content*/}
         <div className="flex flex-col w-full h-full">

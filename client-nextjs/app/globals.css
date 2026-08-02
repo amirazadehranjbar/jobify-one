@@ -6,6 +6,11 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  /*--breakpoint-sm: 40rem;*/
+  /*--breakpoint-md: 48rem;*/
+  /*--breakpoint-lg: 64rem;*/
+  /*--breakpoint-xl: 80rem;*/
+  /*--breakpoint-2xl: 96rem;*/
   --color-light-cyan-50: oklch(97.67% 0.021 200.45);
   --color-light-cyan-100: oklch(95.43% 0.041 198.35);
   --color-light-cyan-200: oklch(91.32% 0.079 198.82);
