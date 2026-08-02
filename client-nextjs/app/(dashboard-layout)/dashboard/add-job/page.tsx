@@ -49,16 +49,11 @@ enum jobTypeEnum {
 };
 
 const formSchema = z.object({
-    position: z.string(),
-
-    company: z.string(),
-
-    jobLocation: z.string(),
-
-    jobStatus: z.enum(jobStatusEnum),
-
-    jobType: z.enum(jobTypeEnum),
-
+    position: z.string().trim().min(1, "Position is required"),
+    company: z.string().trim().min(1, "Company is required"),
+    jobLocation: z.string().trim().min(1, "Job location is required"),
+    jobStatus: z.enum(jobStatusEnum, { error: "Please select a job status" }),
+    jobType: z.enum(jobTypeEnum , { error: "Please select a job type" }),
 });
 
 export default function AddJobPage() {
@@ -68,7 +63,7 @@ export default function AddJobPage() {
             position: "",
             company: "",
             jobLocation: "",
-            jobStatus: jobStatusEnum.pending,
+            jobStatus: undefined as unknown as jobStatusEnum, // no default → reset clears it, forces user to pick
             jobType: jobTypeEnum.fullTime
         },
     })
@@ -91,7 +86,7 @@ export default function AddJobPage() {
     }
 
     return (
-        <Card className="w-full sm:max-w-md">
+        <Card className="w-1/2">
             <CardHeader>
                 <CardTitle className="text-text-two text-xl font-bold">add job</CardTitle>
                 <CardDescription>
@@ -159,9 +154,43 @@ export default function AddJobPage() {
                                     </FieldLabel>
                                     {/* using Radix's onValueChange/value instead of spreading {...field},
                                          since shadcn's Select doesn't take a native onChange event like Input does */}
-                                    <Select value={field.value} onValueChange={field.onChange}>
-                                        <SelectTrigger className="w-full max-w-48" id="jobLocation">
-                                            <SelectValue/>
+                                    <Select key={field.value} value={field.value} onValueChange={field.onChange}>
+                                        <SelectTrigger className="w-full " id="jobLocation">
+                                            <SelectValue placeholder="select job location"/>
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectGroup>
+                                                <SelectLabel>Job Status</SelectLabel>
+                                                {Object.values(jobStatusEnum).map((status) => (
+                                                    <SelectItem key={status} value={status}>
+                                                        {status}
+                                                    </SelectItem>
+                                                ))}
+                                            </SelectGroup>
+                                        </SelectContent>
+                                    </Select>
+                                    {fieldState.invalid && (
+                                        <FieldError errors={[fieldState.error]}/>
+                                    )}
+                                </Field>
+                            )}
+                        />
+                        {/*endregion*/}
+
+                        {/*region job Status*/}
+                        <Controller
+                            name="jobStatus"
+                            control={form.control}
+                            render={({field, fieldState}) => (
+                                <Field data-invalid={fieldState.invalid}>
+                                    <FieldLabel htmlFor="jobStatus">
+                                        job Status
+                                    </FieldLabel>
+                                    {/* using Radix's onValueChange/value instead of spreading {...field},
+                                         since shadcn's Select doesn't take a native onChange event like Input does */}
+                                    <Select key={field.value} value={field.value} onValueChange={field.onChange}>
+                                        <SelectTrigger className="w-full" id="jobStatus">
+                                            <SelectValue placeholder="Select job status" />
                                         </SelectTrigger>
                                         <SelectContent>
                                             <SelectGroup>
